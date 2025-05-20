@@ -45,10 +45,12 @@ if target_column not in df.columns:
 # 'attack_no_attack' is likely the inverse of any attack occurring.
 non_feature_columns = [
     'time_index',
+    'index',
     target_column,
     'attack_no_attack', # If this is 1 when all other attacks are 0, it's highly correlated
     'attack_ddos_binary',
-    'attack_scan_binary'
+    'attack_scan_binary',
+    'original_timestamp'
     # Add any other columns that are not hardware performance counters
 ]
 
@@ -121,6 +123,12 @@ print("\nClassification Report:")
 # Use target_names for better readability if you know what 0 and 1 represent
 # For example: target_names=['No Attack (0)', 'Cache Attack (1)']
 print(classification_report(y_test, y_pred, target_names=['No Attack (0)', 'Attack (1)']))
+
+
+##
+### Confusion Matrix and Graph Generation
+##
+
 
 # Confusion Matrix
 print("\nConfusion Matrix:")
