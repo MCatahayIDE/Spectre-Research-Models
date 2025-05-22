@@ -12,9 +12,9 @@ from sklearn.metrics import accuracy_score, classification_report, confusion_mat
 #import data from Master-DF
 try:
     #load CSV from Data
-    principal_df = pd.read_csv('data\combined_8k.csv')
+    principal_df = pd.read_csv('Data\master_combined_75k.csv')
 except FileNotFoundError:
-    print("Error: 'combined_8k.csv' not found. Please ensure the file path is correct.")
+    print("Error: data frame not found. Please ensure the file path is correct.")
     exit()
 
 #load head to ensure data is loaded correctly
@@ -67,6 +67,8 @@ mlp_binary = MLPClassifier(
     activation = 'relu',
     max_iter = 1000,
     random_state = 50                      #seed training for reproducibility
+    #solver = 'adam',                     #default solver
+    #alpha = 0.0001,                     #default L2 penalty
 )
 
 ##Train

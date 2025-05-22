@@ -20,9 +20,9 @@ import seaborn as sns
 try:
     # Assuming the CSV is in the same directory as the script.
     # If it's in a 'data' subdirectory, use 'data/combined_8k.csv'
-    df = pd.read_csv('Data\combined_8k.csv')
+    df = pd.read_csv('Data\master_combined_75k.csv')
 except FileNotFoundError:
-    print("Error: 'combined_8k.csv' not found. Please ensure the file path is correct.")
+    print("Error: 'master_combined_75k.csv' not found. Please ensure the file path is correct.")
     exit()
 
 print("--- Data Head ---")
@@ -86,7 +86,7 @@ else:
 # Stratify by y to ensure similar class proportions in train and test sets,
 # especially important if the dataset is imbalanced.
 X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.25, random_state=42, stratify=y
+    X, y, test_size=0.15, random_state=42, stratify=y
 )
 
 print(f"\nTraining set shape: X_train: {X_train.shape}, y_train: {y_train.shape}")
