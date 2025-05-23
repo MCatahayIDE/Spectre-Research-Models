@@ -63,12 +63,17 @@ X_test = feature_scaler.transform(X_test)
 
 ##Initialize MLP Binary Classifier Model
 mlp_binary = MLPClassifier(
-    hidden_layer_sizes = (256, 128, 64),
+    hidden_layer_sizes = (512, 256, 128, 64),
     activation = 'relu',
-    max_iter = 1000,
+    solver = 'adam',                       #default solver
+    max_iter = 1000,                       #default max iterations    
+    alpha = 0.0001,                        #default L2 penalty
+    batch_size = 256,                      #default batch size
+    learning_rate = 'adaptive',            #default learning rate
+    early_stopping= True,                  #default early stopping
+    validation_fraction = 0.1,             #default validation fraction
+    n_iter_no_change = 10,                 #default n_iter_no_change
     random_state = 50                      #seed training for reproducibility
-    #solver = 'adam',                     #default solver
-    #alpha = 0.0001,                     #default L2 penalty
 )
 
 ##Train

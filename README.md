@@ -15,5 +15,8 @@
 
 ### Converting .txt data files to .csv
 
--**Use Sampler_final.py convertCSV Function** The CSV file conversion uses the master track CSV to track which .txt files need to be converted into CSVs, so the function simply needs to be executed in the terminal. It will also be able to ignore any files it's detected have already been detected. New CSV files should appear within the coressponding CSV file for the coressponding timestamp trial batch group.
+- **Use Sampler_final.py convertCSV Function** The CSV file conversion uses the master track CSV to track which .txt files need to be converted into CSVs, so the function simply needs to be executed in the terminal. It will also be able to ignore any files it's detected have already been detected. New CSV files should appear within the coressponding CSV file for the coressponding timestamp trial batch group.
+
+### Unify A Timestamp's batch CSV files Into A Single CSV
+- **Use Jupyter Combine_Batch_File Functions** Iterate through the first jupyter file modules to import relevant packages. Then locate the combine_csv function. Near the bottom of the function locate the directory path input and change the directory to locate the folder containing all CSVs for a given timestamp for conversion. Similarly, change the output directory name and path to direct the output to CSV to where you need it
 
