@@ -20,7 +20,7 @@ import seaborn as sns
 try:
     # Assuming the CSV is in the same directory as the script.
     # If it's in a 'data' subdirectory, use 'data/combined_8k.csv'
-    df = pd.read_csv('Data\master_combined_75k.csv')
+    df = pd.read_csv('Data\master_combined_95k.csv')
 except FileNotFoundError:
     print("Error: 'master_combined_75k.csv' not found. Please ensure the file path is correct.")
     exit()
