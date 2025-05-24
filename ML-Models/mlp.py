@@ -51,9 +51,7 @@ Y_target = principal_df[target_col]
 
 ##Assign testing and training proportions to split dataset
 X_train, X_test, Y_train, Y_test = train_test_split(
-
-X_features, Y_target, test_size = 0.2
-
+X_features, Y_target, test_size = 0.2, random_state = 50
 )
 
 ##Standardize and scale data
@@ -63,7 +61,7 @@ X_test = feature_scaler.transform(X_test)
 
 ##Initialize MLP Binary Classifier Model
 mlp_binary = MLPClassifier(
-    hidden_layer_sizes = (512, 256, 128, 64, 32),
+    hidden_layer_sizes = (512, 256, 128, 64),
     activation = 'relu',
     solver = 'adam',                       #default solver
     max_iter = 1000,                       #default max iterations    
