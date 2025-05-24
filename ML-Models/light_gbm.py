@@ -41,9 +41,9 @@ warnings.filterwarnings("ignore", category=UserWarning, module="lightgbm")
 try:
     # Assuming the CSV is in the same directory as the script.
     # If it's in a 'data' subdirectory, use 'data/combined_8k.csv'
-    df = pd.read_csv('Data\master_combined_95k.csv')
+    df = pd.read_csv('Data\master_combined_120k.csv')
 except FileNotFoundError:
-    print("Error: 'master_combined_95k.csv' not found. Please ensure the file path is correct.")
+    print("Error: 'master_combined_120k.csv' not found. Please ensure the file path is correct.")
     exit()
 
 #Load head and frame metrics to ensure data is loaded correctly
@@ -107,15 +107,16 @@ lgbm_binary = LGBMClassifier(
 lgbm_binary.set_params(
     boosting_type='gbdt',
     objective='binary',
-    num_leaves=64,
+    num_leaves=32,
     learning_rate=0.05,
     n_estimators=1000,
     max_depth=-1,
-    min_child_samples=100,
+    min_child_samples=150,
     subsample=0.8,
     colsample_bytree=0.8,
     reg_alpha=0.1,
-    reg_lambda=0.1
+    reg_lambda=0.1,
+    scale_pos_weight=0.72                               # Adjusted for class imbalance
 )
 
 #Train LightGBM Classifier on dataset set for training

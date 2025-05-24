@@ -12,7 +12,7 @@ from sklearn.metrics import accuracy_score, classification_report, confusion_mat
 #import data from Master-DF
 try:
     #load CSV from Data
-    principal_df = pd.read_csv('Data\master_combined_95k.csv')
+    principal_df = pd.read_csv('Data\master_combined_120k.csv')
 except FileNotFoundError:
     print("Error: data frame not found. Please ensure the file path is correct.")
     exit()
