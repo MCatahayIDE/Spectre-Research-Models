@@ -20,9 +20,9 @@ import seaborn as sns
 try:
     # Assuming the CSV is in the same directory as the script.
     # If it's in a 'data' subdirectory, use 'data/combined_8k.csv'
-    df = pd.read_csv('Data\master_combined_120k.csv')
+    df = pd.read_csv('Data\master_combined_150k.csv')
 except FileNotFoundError:
-    print("Error: 'master_combined_120k.csv' not found. Please ensure the file path is correct.")
+    print("Error: 'master_combined_150k.csv' not found. Please ensure the file path is correct.")
     exit()
 
 print("--- Data Head ---")
@@ -186,3 +186,11 @@ plt.tight_layout()
 plt.show()
 
 print("\n--- Script Finished ---")
+
+
+#Check-In Clarifications for deliverables
+#memory efficiency
+#speed of execution
+#accuracy above 93%, preferably aboe 95%
+
+#Data visualizations

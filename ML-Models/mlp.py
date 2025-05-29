@@ -12,7 +12,7 @@ from sklearn.metrics import accuracy_score, classification_report, confusion_mat
 #import data from Master-DF
 try:
     #load CSV from Data
-    principal_df = pd.read_csv('Data\master_combined_120k.csv')
+    principal_df = pd.read_csv('Data\master_combined_150k.csv')
 except FileNotFoundError:
     print("Error: data frame not found. Please ensure the file path is correct.")
     exit()
@@ -61,7 +61,7 @@ X_test = feature_scaler.transform(X_test)
 
 ##Initialize MLP Binary Classifier Model
 mlp_binary = MLPClassifier(
-    hidden_layer_sizes = (512, 256, 128, 64),
+    hidden_layer_sizes = (512, 256, 128),
     activation = 'relu',
     solver = 'adam',                       #default solver
     max_iter = 1000,                       #default max iterations    
